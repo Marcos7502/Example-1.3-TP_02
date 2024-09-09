@@ -26,7 +26,7 @@
 #define OVERTEMPERATURE_DETECTOR_GPIO_PORT  GPIOE
 
 // Alarm off button GPIO address
-#define ALARM_OFF_BUTTON_PIN        GPIO_PIN13
+#define ALARM_OFF_BUTTON_PIN        GPIO_PIN_13
 #define ALARM_OFF_BUTTON_GPIO_PORT  GPIOC
 
 
@@ -81,7 +81,7 @@ int main(void)
       HAL_GPIO_WritePin(ALARM_LED_GPIO_PORT, ALARM_LED_PIN, GPIO_PIN_SET) ;
     }
 
-    if (HAL_GPIO_ReadPin(ALARM_OFF_BUTTON_PORT, ALARM_OFF_BUTTON_PIN)) {
+    if (HAL_GPIO_ReadPin(ALARM_OFF_BUTTON_GPIO_PORT, ALARM_OFF_BUTTON_PIN)) {
       alarmState = 0 ;
       HAL_GPIO_WritePin(ALARM_LED_GPIO_PORT, ALARM_LED_PIN, GPIO_PIN_RESET) ;                
     }
