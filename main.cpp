@@ -3,8 +3,18 @@
 
 
 /* 
-El archivo donde se encuentran las funciones de C stm32f4xx_hal_gpio.h
-Esta en la carpeta de target
+
+Mbed utiliza el HAL y las APIs de LL de STM32CubeF4 para manipular el hardware de la placa NUCLEO-F429ZI.
+
+Este paquete se encuentra en la carpeta ./mbed-os/targets/TARGET_STM/TARGET_STM32F4/STM32Cube_FW/STM32F4xx_HAL_Driver.
+
+Para utilizar solamente funciones de C en este ejemplo se utilizan el driver genérico GPIO del HAL. Las funciones requeridas se encuentran declaradas en el archivo de cabecera ./mbed-os/targets/TARGET_STM/TARGET_STM32F4/STM32Cube_FW/STM32F4xx_HAL_Driver/stm32f4xx_hal_gpio.h
+
+Para utilizar el HAL se debe incluir el archivo stm32f4xx_hal.h e inicializar el sistema invocando la función HAL_Init(), para más información ver el documento de referencia [1].
+
+Documentos de referencia:
+[1] ST user manual UM1725 - Description of STM32F4 HAL and low-layer drivers - Revision 8 [22-Mar-2023].
+
 
 Las funciones esenciales son:
 HAL_GPIO_Init(GPIO_TypeDef  *GPIOx, GPIO_InitTypeDef *GPIO_Init);
@@ -76,3 +86,14 @@ int main(void)
         }
     }
 }
+
+/*
+Ventajas de usar C sobre C++
+Es más preciso que inicializar objetos en C++, donde se pueden inicializar un montón de 
+parámetros y de métodos que después no se usan.
+Esto puede hacerlo más rápido que con C++.
+
+Desventajas de usar C sobre C++
+El código es más largo que con C++, porque requiere más detalle.
+El código pierde fácil interpretación por ser más largo y complicado.
+*/
