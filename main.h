@@ -1,5 +1,5 @@
-// Configure C or C++ compilation
-// #define CPLUSPLUS  // Uncomment ONLY ONE for C++ compilation or C compilation
+// Configure C or C++ functionality usage
+// #define CPLUSPLUS  // Uncomment ONLY ONE to chose C++ or C 
 #define C
 
 #ifndef C
