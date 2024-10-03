@@ -101,7 +101,6 @@ int main(void)
         if ( gasDetector == OFF ) {
         alarmLed = OFF;
         }
-        printf("%s\n","Hello World");
         #endif
 
         #ifdef C
